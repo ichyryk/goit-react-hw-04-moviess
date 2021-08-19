@@ -2,6 +2,7 @@
   "name": "goit-react-hw-04-movies",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://ichyryk.github.io/goit-react-hw-04-movies/",
   "dependencies": {
     "-": "0.0.1",
     "@emotion/react": "^11.4.0",
