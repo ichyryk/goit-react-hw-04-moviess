@@ -4,18 +4,17 @@ import filmsApi from '../services/moviesAPI';
 import MovieList from 'components/MoviesList/MoviesList';
 
 function HomePage() {
-  // const { url } = useRouteMatch();
-  // const location = useLocation();
   const [movies, setMovies] = useState([]);
-  // const [page, setPage] = useState(1);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
-    filmsApi.fetchTrendingMovies().then(setMovies);
+    filmsApi.fetchTrendingMovies().then(setMovies).catch(setError);
   }, []);
 
   return (
     <div>
-      <h2>Trending Today</h2>
+      <h2 className="Homepage-title">The most popular movies today</h2>
+      {error && <p>Oops, something went wrong... {error}</p>}
 
       {movies && <MovieList movies={movies} />}
     </div>

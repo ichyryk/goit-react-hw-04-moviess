@@ -28,13 +28,13 @@ function MovieDetailsPage() {
 
   return (
     <>
-      <button type="button" onClick={handleGoBack}>
+      <button type="button" onClick={handleGoBack} className="btn">
         Go back
       </button>
       {movie && <MovieDetails movie={movie} />}
       <div>
         <h2>Additional information</h2>
-        <ul>
+        <ul className="add-info-block">
           <li>
             <NavLink
               className="add-info"

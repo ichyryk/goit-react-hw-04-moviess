@@ -11,10 +11,10 @@ const MovieDetails = ({ movie }) => {
 
   return (
     <div className={s.flex}>
+      <img src={imgUrl} alt={title} width="320" />
       <div className={s.info}>
-        <img src={imgUrl} alt={title} />
         <h2>{title}</h2>
-        <b>Release: ({release_date})</b>
+        <b>Release: {release_date}</b>
         <p>User score: {vote_average}</p>
         <h3>Overview</h3>
         <p>{overview}</p>

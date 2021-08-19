@@ -27,13 +27,13 @@ const Reviews = ({ match }) => {
 
   return (
     <>
-      <h5>Reviews</h5>
+      <h4>Reviews: </h4>
       {error && <p>Oops, something went wrong... {error}</p>}
       {reviews.length > 0 && !error ? (
         <ul>
           {reviews.map(({ id, content, author }) => (
             <li key={id}>
-              <p>{author}</p>
+              <b>@{author}</b>
               <p>{content}</p>
             </li>
           ))}

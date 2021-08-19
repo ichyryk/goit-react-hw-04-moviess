@@ -40,13 +40,16 @@ function MoviePage() {
     <div>
       <form onSubmit={handleFormSubmit}>
         <input
+          className="input"
           type="text"
           autoFocus
           autoComplete="off"
           value={query}
           onChange={handleNameChange}
         />
-        <button type="button">Search</button>
+        <button type="button" className="btn">
+          Search
+        </button>
       </form>
       {error && <p>Oops, something went wrong... {error}</p>}
       <MoviesList movies={movies} query={query} />
