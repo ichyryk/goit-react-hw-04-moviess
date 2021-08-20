@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { useParams, useHistory, useLocation } from 'react-router-dom';
 import { NavLink, Route, useRouteMatch } from 'react-router-dom';
 import filmsApi from '../services/moviesAPI';
@@ -55,12 +55,14 @@ function MovieDetailsPage() {
           </li>
         </ul>
       </div>
-      <Route path={`${path}/${movieId}/cast`}>
-        <Cast />
-      </Route>
-      <Route path={`${path}/${movieId}/reviews`}>
-        <Reviews />
-      </Route>
+      <Suspense fallback={<h2>Loading...</h2>}>
+        <Route path={`${path}/${movieId}/cast`}>
+          <Cast />
+        </Route>
+        <Route path={`${path}/${movieId}/reviews`}>
+          <Reviews />
+        </Route>
+      </Suspense>
     </>
   );
 }
